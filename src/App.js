@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './Pages/Home'
+import Login from './Pages/Login'
+import Register from './Pages/Register'
+import NewPortfolio from './Pages/NewPortfolio'
+import Portfolio from './Pages/Portfolio'
+import Members from './Pages/Members'
+import GroupChat from './Pages/GroupChat'
+import Admin from './Pages/Admin'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/newportfolio' element={<NewPortfolio/>} />
+        <Route path='/portfolio' element={<Portfolio/>} />
+        <Route path='/members' element={<Members/>} />
+        <Route path='/groupchat' element={<GroupChat/>} />
+        <Route path='/admin' element={<Admin/>} />
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App
