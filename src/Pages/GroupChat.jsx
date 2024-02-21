@@ -31,15 +31,15 @@ const GroupChat = () => {
   },[rel])
 
   useEffect(()=>{
-    // if(currentUser){
-    //   socket.current = io("https://zenchat-backend.onrender.com")
-    //   socket.current.emit("add-user",currentUser._id)
-    // }
-    // @testing@@@@@@@@@@@@@@@@@@@@
     if(currentUser){
-      socket.current = io("http://localhost:3500")
+      socket.current = io("https://techwiz-api.onrender.com")
       socket.current.emit("add-user",currentUser._id)
     }
+    // @testing@@@@@@@@@@@@@@@@@@@@
+    // if(currentUser){
+    //   socket.current = io("http://localhost:3500")
+    //   socket.current.emit("add-user",currentUser._id)
+    // }
   },[currentUser])
 
   const handleLogOut=async()=>{
