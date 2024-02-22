@@ -34,7 +34,7 @@ const Portfolio = ({selectedUser,setSelectedUser}) => {
 
 
   return (
-    <Container>
+    <SelectedContainer>
       {loader?(<div class="loader"></div>):(
         <div className="div">
         {portfolio===undefined?(<div class="notselected"><h1 >Select a Member To see Their Portfolio</h1></div>):(
@@ -89,7 +89,7 @@ const Portfolio = ({selectedUser,setSelectedUser}) => {
         )}
         </div>
       )}
-    </Container>
+    </SelectedContainer>
   )
 }
 
@@ -99,7 +99,7 @@ const slideLeft = keyframes`
   }
 `;
 
-const Container = styled.div`
+const SelectedContainer = styled.div`
   width: 100%;
   background-size: cover;
   background-position: center;

@@ -22,7 +22,7 @@ const MemberList = ({setSelectedUser}) => {
         fetchUsers()
     },[])
   return (
-    <Container>
+    <MemberContainer>
         {loader?(<div class="loader"></div>):(
         <div className="users">
             <ul>
@@ -35,7 +35,7 @@ const MemberList = ({setSelectedUser}) => {
             </ul>
         </div>
          )}
-    </Container>
+    </MemberContainer>
   )
 }
 
@@ -45,7 +45,7 @@ const slideLeft = keyframes`
   }
 `;
 
-const Container = styled.div`
+const MemberContainer = styled.div`
     width:100%;
     height: 100%;
     overflow: hidden;

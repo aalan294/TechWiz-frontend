@@ -147,6 +147,7 @@ const Container = styled.div`
   height: 100vh;
   background-attachment: fixed;
   overflow-y: scroll;
+  position: relative;
   .nav{
       position: absolute;
       top: 2rem;

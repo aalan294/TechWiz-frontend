@@ -73,6 +73,7 @@ const Container = styled.div`
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
     .nav{
       position: absolute;
       top: 1rem;

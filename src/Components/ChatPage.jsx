@@ -92,7 +92,7 @@ const ChatPage = ({socket}) => {
     }
 
   return (
-    <Container>
+    <ChatContainer>
                 <div  className="chat-header">
                     <div className="chatUser">
                         <img src={logo} alt="" />
@@ -120,7 +120,7 @@ const ChatPage = ({socket}) => {
                 <button type='submit'><IoMdSend/></button>
             </form>
         </div>
-    </Container>
+    </ChatContainer>
   )
 }
 
@@ -130,7 +130,7 @@ const slideLeft = keyframes`
   }
 `;
 
-const Container = styled.div`
+const ChatContainer = styled.div`
     height: 100%;
     width: 100%;
     display: grid;
