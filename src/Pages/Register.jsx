@@ -11,6 +11,14 @@ const Register = () => {
     const [isChecked, setIsChecked] = useState(false)
     const [rel,setRel] = useState(true)
 
+    useEffect(()=>{
+      if(localStorage.getItem('TechWiz-details')){
+      }
+      else{
+        navigate('/login')
+      }
+    },[rel])
+
     const [values,setValues] = useState({
         email:"",
         username:""

@@ -50,6 +50,7 @@ const Admin = () => {
       }
     }
 
+    
     const handleRemoveUser = async(id)=>{
       const confirmLogout = window.confirm("Are you sure? Do you want to remove the user?")
       if(confirmLogout){
