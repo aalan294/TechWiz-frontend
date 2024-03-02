@@ -37,7 +37,7 @@ const GroupChat = () => {
     // }
     // @testing@@@@@@@@@@@@@@@@@@@@
     if(currentUser){
-      socket.current = io("http://localhost:3500")
+      socket.current = io("https://techwiz-api.onrender.com")
       socket.current.emit("add-user",currentUser._id)
     }
   },[currentUser])

@@ -19,25 +19,7 @@ const ChatPage = ({socket}) => {
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
-
-    //socket.io integration
-
-    useEffect(()=>{
-        if (socket.current) {
-            socket.current.on("msg-receive", (message) => {
-                setArrivalMessage({ fromSelf: false, message: message.message, sender: message.sender });
-            });
-        }
     
-        return () => {
-            if (socket.current) {
-                socket.current.off("msg-receive");
-            }
-        };
-    },[socket])
-    useEffect(()=>{
-        arrivalMessage && setMessages((prev)=>[...prev,arrivalMessage])
-    },[arrivalMessage])
 
     /////////////
      useEffect(()=>{
@@ -65,6 +47,28 @@ const ChatPage = ({socket}) => {
         }
         fetchMessages()
     },[])
+
+    useEffect(() => {
+       if(socket.current) {
+        if (socket.current) {
+            socket.current.on("msg-receive", (message) => {
+                setArrivalMessage({ fromSelf: false, message: message.message, sender: message.sender });
+            });
+        }
+    
+        return () => {
+            if (socket.current) {
+                socket.current.off("msg-receive");
+            }
+        };
+    }
+    }, [socket.current,socket]);
+    
+    useEffect(() => {
+        if (arrivalMessage) {
+            setMessages(prev => [...prev, arrivalMessage]);
+        }
+    }, [arrivalMessage]);
 
     const handleSendMsg =async(e)=>{
         if(msg!==""){

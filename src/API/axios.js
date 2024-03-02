@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 // export default axios.create({
-//     baseURL: "https://techwiz-api.onrender.com"
+//     baseURL: "http://localhost:3500"
 // })
 export default axios.create({
-    baseURL: "http://localhost:3500"
+    baseURL: "https://techwiz-api.onrender.com"
 })
